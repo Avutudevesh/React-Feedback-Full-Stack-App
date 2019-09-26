@@ -14,18 +14,7 @@ module.exports = app => {
 
     app.get('/api/current_user', (req, res) => {
         //req.session['ighs-session'] = 'ighs';
-        var cache = [];
-        res.send(JSON.stringify(req, function(key, value) {
-        if (typeof value === 'object' && value !== null) {
-        if (cache.indexOf(value) !== -1) {
-            // Duplicate reference found, discard key
-            return;
-        }
-        // Store value in our collection
-        cache.push(value);
-        }
-        return value;
-        }));
-        cache = null;
+        res.send(req.isAuthenticated());
+        
         });
 }
