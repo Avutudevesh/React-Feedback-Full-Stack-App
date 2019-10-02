@@ -5,6 +5,7 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser')
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');
 
 console.log(keys.mongoURI);
@@ -23,6 +24,8 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
+
 if(process.env.NODE_ENV === 'production'){
     //Express will server up production css and js assets
     app.use(express.static('client/build'));

@@ -4,10 +4,7 @@ import Header from './Header';
 import {connect} from 'react-redux';
 import {fetchUser} from '../actions';
 import Landing from './Landing';
-
-const Dashboard = () => {
-    return <h2>Dashboard</h2>;
-}
+import Dashboard from './Dashboard';
 
 const SurveyNew = () => {
     return <h2>SurveyNew</h2>;
