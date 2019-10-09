@@ -5,10 +5,7 @@ import {connect} from 'react-redux';
 import {fetchUser} from '../actions';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
-
-const SurveyNew = () => {
-    return <h2>SurveyNew</h2>;
-}
+import SurveyNew from './surveys/SurveyNew';
 
 class App extends React.Component {
     componentDidMount(){
